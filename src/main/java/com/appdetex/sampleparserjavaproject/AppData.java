@@ -23,6 +23,26 @@ public class AppData {
         this.rating = rating;
     }
 
+    public String getTitle() {
+        return title;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public String getPublisher() {
+        return publisher;
+    }
+
+    public String getPrice() {
+        return price;
+    }
+
+    public float getRating() {
+        return rating;
+    }
+
     @Override
     public String toString() {
         return ToStringBuilder.reflectionToString(this);
