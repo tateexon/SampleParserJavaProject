@@ -89,7 +89,7 @@ public class ParserTest {
         String expectedDescription = "Dino Island is a totally new raising experience with smooth controls lovingly handcrafted for your Android phones and tablets.";
         Assert.assertEquals(data.getDescription(), expectedDescription, "The description is incorrectly parsed.");
         Assert.assertEquals(data.getPublisher(), "Doodle Mobile Ltd.", "The publisher is incorrectly parsed.");
-        Assert.assertEquals(data.getPrice(), "FREE", "The rating is incorrectly parsed.");
+        Assert.assertEquals(data.getPrice(), "Free", "The rating is incorrectly parsed.");
         Assert.assertEquals(data.getRating(), 4.4f, "The rating is incorrectly parsed.");
 
     }

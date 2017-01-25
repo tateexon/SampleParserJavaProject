@@ -50,11 +50,12 @@ public class AppData {
 
     /**
      * Use Gson to translate this object into a json string
+     * We do serialize nulls
      *
      * @return this objects data as a json string
      */
     public String toJson() {
-        Gson gson = new GsonBuilder().setPrettyPrinting().create();
+        Gson gson = new GsonBuilder().setPrettyPrinting().serializeNulls().create();
         return gson.toJson(this);
     }
 }
