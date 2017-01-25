@@ -18,11 +18,13 @@ public class Main {
 
     public static void main(String[] args) throws IOException {
 
+        // check for argument length
         if (args.length <= 0 || args.length> 1) {
             printUsage();
             return;
         }
 
+        // catch malformed urls
         try {
             URL url = new URL(args[0]);
             Document document = Jsoup.connect(url.toString()).get();
@@ -36,6 +38,9 @@ public class Main {
 
     }
 
+    /**
+     * Print out the usage information
+     */
     public static void printUsage() {
         System.out.println("Requires 1 argument as a valid google play app url. Example: https://play.google.com/store/apps/details?id=com.exozet.game.carcassonne");
     }

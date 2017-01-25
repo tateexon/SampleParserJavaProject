@@ -1,15 +1,13 @@
 package com.appdetex.sampleparserjavaproject;
 
-import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
 import java.io.IOException;
-import java.net.URL;
 
 /**
- * Created by m662149 on 1/23/17.
+ * Will parse data from a google play web page using Jsoup
  */
 public class Parser {
 
@@ -35,7 +33,11 @@ public class Parser {
         return parsedData;
     }
 
-
+    /**
+     * Parse the title from the html document
+     *
+     * @return The title as a String
+     */
     private String parseTitle() {
         String title = null;
         Element titleElement = document.select(TITLE_SELECTOR).first();
@@ -48,6 +50,11 @@ public class Parser {
         return title;
     }
 
+    /**
+     * Parse the first paragraph from the html document
+     *
+     * @return The first paragraph as a String
+     */
     private String parseDescription() {
         String description = null;
         Element descriptionElement = document.select(DESCRIPTION_SELECTOR).first();
@@ -60,6 +67,11 @@ public class Parser {
         return description;
     }
 
+    /**
+     * Parse the publisher from the html document
+     *
+     * @return The publisher as a String
+     */
     private String parsePublisher() {
         String publisher = null;
         Element publisherElement = document.select(PUBLISHER_SELECTOR).first();
@@ -72,6 +84,11 @@ public class Parser {
         return publisher;
     }
 
+    /**
+     * Parse the price from the html document
+     *
+     * @return The price as a String or Free if no price
+     */
     private String parsePrice() {
         String price = null;
         Element priceElementContainer = document.select(PRICE_SELECTOR).first();
@@ -103,6 +120,11 @@ public class Parser {
         return price;
     }
 
+    /**
+     * Parse the app average rating from the html document
+     *
+     * @return The rating as a float
+     */
     private float parseRating() {
         String rating = "0.0";
         Element ratingElement = document.select(RATING_SELECTOR).first();

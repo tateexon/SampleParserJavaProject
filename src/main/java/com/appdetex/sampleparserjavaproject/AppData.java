@@ -5,7 +5,7 @@ import com.google.gson.GsonBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 
 /**
- * Created by m662149 on 1/23/17.
+ * Class to store Data from a google app play store url
  */
 public class AppData {
 

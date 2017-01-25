@@ -27,6 +27,7 @@ Where the <google play app url> is a valid app url. Example:
     Maven
     Maven-shade
     Gson
+    TestNG
     Mockito
     PowerMock
     

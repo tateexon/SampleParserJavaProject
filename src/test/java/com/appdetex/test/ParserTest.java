@@ -19,6 +19,9 @@ import java.io.IOException;
 import java.net.URL;
 
 
+/**
+ * Test class for the parser
+ */
 @PrepareForTest(Jsoup.class)
 public class ParserTest {
 
@@ -91,7 +94,20 @@ public class ParserTest {
         Assert.assertEquals(data.getPublisher(), "Doodle Mobile Ltd.", "The publisher is incorrectly parsed.");
         Assert.assertEquals(data.getPrice(), "Free", "The rating is incorrectly parsed.");
         Assert.assertEquals(data.getRating(), 4.4f, "The rating is incorrectly parsed.");
+    }
 
+    @Test
+    public void testNullValues() {
+        AppData data = new AppData(null, null, null, null, 0.0f);
+        String json = data.toJson();
+        String expected = "{\n" +
+                "  \"title\": null,\n" +
+                "  \"description\": null,\n" +
+                "  \"publisher\": null,\n" +
+                "  \"price\": null,\n" +
+                "  \"rating\": 0.0\n" +
+                "}";
+        Assert.assertEquals(json, expected, "The null based app data did not populate correctly.");
     }
 
     /**
