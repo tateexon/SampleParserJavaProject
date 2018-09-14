@@ -1,0 +1,21 @@
+        Properties prop = new Properties();
+        InputStream input = null;
+
+        try {
+            String fileName = "application.properties";
+            input = Environment.class.getClassLoader().getResourceAsStream(fileName);
+
+            // load a properties file
+            prop.load(input);
+
+        } catch (IOException ex) {
+            ex.printStackTrace();
+        } finally {
+            if (input != null) {
+                try {
+                    input.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
